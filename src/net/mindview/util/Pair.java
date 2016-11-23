@@ -1,4 +1,4 @@
-package ping.wu.util;
+package net.mindview.util;
 
 /**
  * Created by ping.wu on 2016/11/21.

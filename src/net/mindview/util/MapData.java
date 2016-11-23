@@ -1,4 +1,4 @@
-package ping.wu.util;
+package net.mindview.util;
 
 import java.util.LinkedHashMap;
 

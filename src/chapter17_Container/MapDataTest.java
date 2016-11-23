@@ -1,8 +1,8 @@
 package chapter17_Container;
 
-import ping.wu.util.Generator;
-import ping.wu.util.MapData;
-import ping.wu.util.Pair;
+import net.mindview.util.Generator;
+import net.mindview.util.MapData;
+import net.mindview.util.Pair;
 
 import java.util.Iterator;
 

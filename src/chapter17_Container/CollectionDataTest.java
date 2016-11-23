@@ -1,6 +1,6 @@
 package chapter17_Container;
 
-import ping.wu.util.Generator;
+import net.mindview.util.Generator;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
