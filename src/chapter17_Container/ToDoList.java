@@ -16,7 +16,7 @@ public class ToDoList extends PriorityQueue<ToDoList.ToDoItem> {
             secondary = sec;
             item = td;
         }
-
+        @Override
         public int compareTo(ToDoItem arg) {
             if (primary > arg.primary) {
                 return +1;
@@ -42,5 +42,13 @@ public class ToDoList extends PriorityQueue<ToDoList.ToDoItem> {
     public static void main(String[] args) {
         ToDoList toDoList = new ToDoList();
         toDoList.add("Empty trash", 'C', 4);
+        toDoList.add("Feed dog", 'A', 2);
+        toDoList.add("Feed bird", 'B', 7);
+        toDoList.add("Mow lawn", 'C', 3);
+        toDoList.add("Water lawn", 'A', 1);
+        toDoList.add("Feed cat", 'B', 1);
+        while (!toDoList.isEmpty()) {
+            System.out.println(toDoList.remove());
+        }
     }
 }
