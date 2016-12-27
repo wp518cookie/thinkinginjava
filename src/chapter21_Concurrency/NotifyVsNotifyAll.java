@@ -4,6 +4,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by ping.wu on 2016/12/23.
@@ -53,7 +54,28 @@ public class NotifyVsNotifyAll {
         }
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
-            
-        });
+            boolean prod = true;
+
+            public void run() {
+                if (prod) {
+                    System.out.println("\nnotify() ");
+                    Task.blocker.prod();
+                    prod = false;
+                } else {
+                    System.out.println("\n notifyAll() ");
+                    Task.blocker.prodAll();
+                    prod = true;
+                }
+            }
+        }, 400, 400);
+        TimeUnit.SECONDS.sleep(5);
+        timer.cancel();
+        System.out.println("\n Timer canceled");
+        TimeUnit.MILLISECONDS.sleep(500);
+        System.out.print("Task2.blocker.prodAll() ");
+        Task2.blocker.prodAll();
+        TimeUnit.MILLISECONDS.sleep(500);
+        System.out.println("\nShutting down");
+        exec.shutdownNow();
     }
 }
