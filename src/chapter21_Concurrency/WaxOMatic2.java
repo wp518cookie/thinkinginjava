@@ -16,8 +16,9 @@ class Car2 {
     private boolean waxOn = false;
 
     public void waxed() {
+        lock.lock();
         try {
-            lock.lock();
+            waxOn = true;
             condition.signalAll();
         } finally {
             lock.unlock();
