@@ -25,4 +25,9 @@ public class LiftOff implements Runnable {
             Thread.yield();
         }
     }
+
+    public static void main(String[] args) {
+        LiftOff liftOff = new LiftOff();
+        liftOff.run();
+    }
 }
